@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center">
       {/*Start Tekst*/}
-      <header className="pt-16">
+      <header className="pt-9">
         <div className="text-brand text-[44px] font-[480] tracking-tight">
           Strømly<span className="align-super text-[12px] ml-1">®</span>
         </div>
