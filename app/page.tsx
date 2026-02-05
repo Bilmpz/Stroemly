@@ -3,17 +3,17 @@ export default function Home() {
     <main className="min-h-screen flex flex-col items-center">
       
       {/* Start Logo */}
-      <header className="pt-12">
+      <header className="pt-15">
         <img
           src="/logo.svg"
           alt="Strømly logo"
-          className="h-12 w-auto"
+          className="h-10 w-auto"
         />
       </header>
 
       {/* Center mini boks */}
       <section className="flex-1 flex flex-col items-center justify-center text-center">
-        <div className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-[2px] mb-3">
+        <div className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-[2px] mb-6">
           <span className="text-brand text-[14px] font-[350]">
             Lancering 2026
           </span>
