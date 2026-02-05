@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-<main className="min-h-[70vh] lg:min-h-screen flex flex-col items-center px-6 lg:px-0">
+<main className="min-h-[85vh] lg:min-h-screen flex flex-col items-center px-6 lg:px-0">
       {/* Logo */}
       <header className="pt-16 lg:pt-20">
         <img
