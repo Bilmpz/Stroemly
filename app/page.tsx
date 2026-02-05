@@ -28,7 +28,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="pb-18 text-center">
+      <footer className="pb-17 text-center">
         <p className="text-brand text-[20px] leading-[125%] font-[350]">
           Danmarks nye ladeløsning til dig på farten
           <br />
