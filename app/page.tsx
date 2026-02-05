@@ -15,7 +15,7 @@ export default function Home() {
       <section className="flex-1 flex flex-col items-center justify-center text-center">
 
         {/* Badge */}
-        <div className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-[2px] mb-9">
+        <div className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-[2px] mb-8">
           <span className="text-brand text-[14px] font-[350]">
             Lancering 2026
           </span>
@@ -28,7 +28,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="pb-20 text-center">
+      <footer className="pb-18 text-center">
         <p className="text-brand text-[20px] leading-[125%] font-[350]">
           Danmarks nye ladeløsning til dig på farten
           <br />
