@@ -22,7 +22,7 @@ export default function Home() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-brand text-[70px] leading-[110%] font-[350] tracking-tight">
+        <h1 className="text-brand text-[70px] leading-[100%] font-[350] tracking-tight">
           Vi er i gang med at lade op
         </h1>
       </section>
