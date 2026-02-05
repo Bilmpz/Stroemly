@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center px-6 lg:px-0">
+<main className="min-h-[90vh] lg:min-h-screen flex flex-col items-center px-6 lg:px-0">
       {/* Logo */}
       <header className="pt-16 lg:pt-20">
         <img
@@ -13,7 +13,7 @@ export default function Home() {
       {/* Center */}
       <section className="flex-1 flex flex-col items-center justify-center text-center">
         {/* Badge */}
-        <div className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-1 lg:py-[4px] mb-6 lg:mb-8">
+        <div className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-1 lg:py-[4px] mb-6 lg:mb-6">
           <span className="text-brand text-[13px] lg:text-[14px] font-[350]">
             Lancering 2026
           </span>
