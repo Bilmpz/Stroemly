@@ -2,32 +2,32 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center">
       
-      {/* Start Logo */}
-      <header className="pt-9">
-        <img
-          src="/logo.svg"
-          alt="Strømly logo"
-          className="h-12 w-auto"
-        />
+      {/* Logo */}
+      <header className="pt-14">
+        <div className="text-brand text-[44px] font-[450] tracking-tight">
+          Strømly<span className="align-super text-[12px] ml-1">®</span>
+        </div>
       </header>
 
-      {/* Center mini boks */}
+      {/* Center */}
       <section className="flex-1 flex flex-col items-center justify-center text-center">
-        <div className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-[2px] mb-10">
-          <span className="text-brand text-[14px] font-[350]">
+
+        {/* Badge */}
+        <div className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-[2px] mb-12">
+          <span className="text-brand text-[13px] font-[350]">
             Lancering 2026
           </span>
         </div>
 
-        {/* Main tekst i midten */}
-        <h1 className="text-brand text-[50px] leading-[120%] font-[350] tracking-tight">
+        {/* Main headline */}
+        <h1 className="text-brand text-[70px] leading-[110%] font-[350] tracking-tight">
           Vi er i gang med at lade op
         </h1>
       </section>
 
-      {/* Slut tekst */}
-      <footer className="pb-8 text-center">
-        <p className="text-brand text-[16px] leading-[135%] font-[350]">
+      {/* Footer */}
+      <footer className="pb-14 text-center">
+        <p className="text-brand text-[20px] leading-[125%] font-[350]">
           Danmarks nye ladeløsning til dig på farten
           <br />
           eller hjemme. Lad op i ly. Kør grønt
