@@ -15,7 +15,7 @@ export default function Home() {
       <section className="flex-1 flex flex-col items-center justify-center text-center">
 
         {/* Badge */}
-        <div className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-[3px] mb-8">
+        <div className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-[4px] mb-8">
           <span className="text-brand text-[14px] font-[350]">
             Lancering 2026
           </span>
