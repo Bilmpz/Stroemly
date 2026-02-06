@@ -9,44 +9,38 @@ export default function Home() {
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const footerRef = useRef<HTMLElement | null>(null);
 
- useEffect(() => {
+useEffect(() => {
   if (!logoRef.current || !badgeRef.current || !titleRef.current || !footerRef.current) return;
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduceMotion) return;
 
   const ctx = gsap.context(() => {
-    const tl = gsap.timeline({
-      defaults: { ease: "power3.out" },
-    });
-
-    tl.fromTo(
+    const items = [
       logoRef.current,
-      { opacity: 0, y: 12 },
-      { opacity: 1, y: 0, duration: 1.0 }
-    )
-      .fromTo(
-        badgeRef.current,
-        { opacity: 0, y: 12 },
-        { opacity: 1, y: 0, duration: 1.05 },
-        "-=0.85"
-      )
-      .fromTo(
-        titleRef.current,
-        { opacity: 0, y: 14 },
-        { opacity: 1, y: 0, duration: 1.15 },
-        "-=0.9"
-      )
-      .fromTo(
-        footerRef.current,
-        { opacity: 0, y: 12 },
-        { opacity: 1, y: 0, duration: 1.1 },
-        "-=0.95"
-      );
+      badgeRef.current,
+      titleRef.current,
+      footerRef.current,
+    ];
+
+    gsap.fromTo(
+      items,
+      { opacity: 0, y: 14 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.0,
+        stagger: 0.15,       // 150ms mellem hver
+        ease: "power3.out",  // smooth
+        clearProps: "transform", // rydder transform bagefter
+      }
+    );
   });
 
   return () => ctx.revert();
 }, []);
+
+
 
 
 
