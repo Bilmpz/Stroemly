@@ -25,7 +25,7 @@ useEffect(() => {
 
     gsap.fromTo(
       items,
-      { opacity: 0, y: 14 },
+      { opacity: 0, y: 40 },
       {
         opacity: 1,
         y: 0,
