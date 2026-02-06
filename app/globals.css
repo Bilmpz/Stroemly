@@ -39,6 +39,11 @@ body {
   border-color: color-mix(in srgb, var(--color-border) 20%, transparent);
 }
 
-html, body {
+body {
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+main {
   overflow: hidden;
 }
