@@ -9,39 +9,47 @@ export default function Home() {
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const footerRef = useRef<HTMLElement | null>(null);
 
-  useEffect(() => {
-    if (!logoRef.current || !badgeRef.current || !titleRef.current || !footerRef.current) return;
+ useEffect(() => {
+  if (!logoRef.current || !badgeRef.current || !titleRef.current || !footerRef.current) return;
 
-    const tl = gsap.timeline();
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return;
+
+  const ctx = gsap.context(() => {
+    const tl = gsap.timeline({
+      defaults: { ease: "power3.out" },
+    });
 
     tl.fromTo(
       logoRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" } 
+      { opacity: 0, y: 12 },
+      { opacity: 1, y: 0, duration: 1.0 }
     )
       .fromTo(
         badgeRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" },
-        ">0.15"
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 1.05 },
+        "-=0.85"
       )
       .fromTo(
         titleRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" },
-        ">0.15"
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 1.15 },
+        "-=0.9"
       )
       .fromTo(
         footerRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-        ">0.15"
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 1.1 },
+        "-=0.95"
       );
+  });
 
-    return () => {
-      tl.kill();
-    };
-  }, []);
+  return () => ctx.revert();
+}, []);
+
+
+
 
   return (
     <main className="min-h-[90vh] lg:min-h-screen flex flex-col items-center px-6 lg:px-0 overflow-x-hidden">
