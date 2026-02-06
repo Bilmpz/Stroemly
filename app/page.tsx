@@ -6,7 +6,7 @@ export default function Home() {
         <img
           src="/logo.svg"
           alt="Strømly logo"
-          className="h-10 lg:h-12 w-auto"
+          className="h-10 lg:h-10 w-auto"
         />
       </header>
 
