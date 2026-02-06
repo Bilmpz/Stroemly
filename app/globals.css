@@ -38,3 +38,12 @@ body {
 .border-brand-20 {
   border-color: color-mix(in srgb, var(--color-border) 20%, transparent);
 }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-y: scroll;
+}

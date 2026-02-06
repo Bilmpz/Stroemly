@@ -52,7 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="da">
-      <body className={`${wallop.variable} antialiased`}>
+      <body className={`${wallop.variable} antialiased overflow-x-hidden`}>
         {children}
 
         <GoogleAnalytics gaId="G-XXXXXXXXXX" />
