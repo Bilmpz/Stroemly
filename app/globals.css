@@ -40,10 +40,5 @@ body {
 }
 
 html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-html {
-  overflow-y: scroll;
+  overflow: hidden;
 }
