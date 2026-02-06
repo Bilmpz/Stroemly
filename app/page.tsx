@@ -16,26 +16,27 @@ export default function Home() {
     tl.fromTo(
       logoRef.current,
       { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
+      { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" }
     )
-      .fromTo(
-        badgeRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.30, ease: "power2.out" },
-        "-=0.4"
-      )
-      .fromTo(
-        titleRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" },
-        
-      )
-      .fromTo(
-        footerRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
-        
-      );
+    .fromTo(
+      badgeRef.current,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.30, ease: "power2.out" },
+      ">0.15" 
+    )
+    .fromTo(
+      titleRef.current,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" },
+      ">0.15"
+    )
+    .fromTo(
+      footerRef.current,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.60, ease: "power2.out" },
+      ">0.15"
+    );
+
   }, []);
 
   return (
