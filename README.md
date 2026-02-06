@@ -24,6 +24,6 @@ src/
  │   ├── layout.tsx      → Global layout
  │   └── globals.css     → Global styling
  │
- ├── components/         → Genbrugelige komponenter (senere)
+ ├── Public              → Genbrugelige komponenter (senere)
  │
- └── assets/             → Billeder, ikoner, fonts
+ └── Src/                → Undersider 
