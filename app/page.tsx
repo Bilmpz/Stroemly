@@ -39,7 +39,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-[90vh] lg:min-h-screen flex flex-col items-center px-6 lg:px-0">
+    <main className="min-h-[90vh] lg:min-h-screen flex flex-col items-center px-6 lg:px-0 overflow-x-hidden">
 
       {/* Logo */}
       <header ref={logoRef} className="pt-16 lg:pt-20">
@@ -64,11 +64,10 @@ export default function Home() {
         </div>
 
         {/* Headline */}
-        <h1
-          ref={titleRef}
-          className="text-brand font-[350] tracking-tight leading-[30%]
-                     text-[36px] sm:text-[44px] lg:text-[65px]"
-        >
+        <h1 className="text-brand font-[350] tracking-tight leading-[110%]
+               text-[36px] sm:text-[44px] lg:text-[70px]
+               max-w-[18ch] sm:max-w-[22ch] lg:max-w-none
+               break-words">
           Vi er i gang med at lade op
         </h1>
       </section>
