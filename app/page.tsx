@@ -82,7 +82,7 @@ useEffect(() => {
                       text-[14px] sm:text-[16px] lg:text-[18px] max-w-[38ch] lg:max-w-none">
           Danmarks nye ladeløsning til dig på farten
           <br />
-          eller hjemme. Lad op i ly. Kør grønt
+          eller hjemme. Lad op i ly. Kør grønt.
         </p>
       </footer>
     </main>
