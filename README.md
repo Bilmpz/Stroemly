@@ -6,7 +6,7 @@ Siden er bygget i **Next.js + React + Tailwind CSS** og fungerer som en midlerti
 
 ---
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 - **Next.js (App Router)**
 - **React**
@@ -15,7 +15,7 @@ Siden er bygget i **Next.js + React + Tailwind CSS** og fungerer som en midlerti
 
 ---
 
-## 📁 Projektstruktur
+##  Projektstruktur
 
 ```txt
 src/
