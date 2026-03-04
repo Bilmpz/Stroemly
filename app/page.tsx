@@ -24,8 +24,8 @@ useEffect(() => {
       logoRef.current,
       badgeRef.current,
       titleRef.current,
-      footerRef.current, // ✅ footer før
-      ctaRef.current,    // ✅ cta efter
+      footerRef.current, 
+      ctaRef.current,   
     ];
 
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });

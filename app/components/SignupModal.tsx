@@ -33,7 +33,7 @@ export default function SignupModal({ open, onClose }: Props) {
     setTimeout(() => inputRef.current?.focus(), 50);
 
     if (!reduceMotion && overlayRef.current && panelRef.current) {
-      gsap.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.65, ease: "power2.out" });
+      gsap.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.65, ease: "power3.out" });
       gsap.fromTo(
         panelRef.current,
         { opacity: 0, y: 16, scale: 0.985 },
