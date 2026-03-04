@@ -35,8 +35,8 @@ useEffect(() => {
     tl.fromTo(items[0], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.6 })
       .fromTo(items[1], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.42")
       .fromTo(items[2], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.65 }, "-=0.42")
-      .fromTo(items[3], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.65 }, "-=0.42")
-      .fromTo(items[4], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.75 }, "-=0.42");
+      .fromTo(items[3], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.75 }, "-=0.42")
+      .fromTo(items[4], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.65 }, "-=0.42");
 
     // Ryd efter (valgfrit)
     tl.set(items, { clearProps: "transform" });
