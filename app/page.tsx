@@ -13,30 +13,37 @@ export default function Home() {
 
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    if (!logoRef.current || !badgeRef.current || !titleRef.current || !ctaRef.current || !footerRef.current) return;
+useEffect(() => {
+  if (!logoRef.current || !badgeRef.current || !titleRef.current || !ctaRef.current || !footerRef.current) return;
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) return;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return;
 
-    const ctx = gsap.context(() => {
-      // Smooth timeline (ikke “trinvis” hårdt)
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+  const ctx = gsap.context(() => {
+    const items = [
+      logoRef.current,
+      badgeRef.current,
+      titleRef.current,
+      ctaRef.current,
+      footerRef.current,
+    ];
 
-      tl.fromTo(logoRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6 })
-        .fromTo(badgeRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.35")
-        .fromTo(titleRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.7 }, "-=0.35")
-        .fromTo(ctaRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.80 }, "-=0.1")
-        .fromTo(footerRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 1.2 }, "-=0.35");
-
-      // Ryd transform bagefter
-      tl.set([logoRef.current, badgeRef.current, titleRef.current, ctaRef.current, footerRef.current], {
-        clearProps: "transform",
-      });
+    const tl = gsap.timeline({
+      defaults: { ease: "power3.out" },
     });
 
-    return () => ctx.revert();
-  }, []);
+    tl.fromTo(items[0], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.6 })
+      .fromTo(items[1], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.42")
+      .fromTo(items[2], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.65 }, "-=0.42")
+      .fromTo(items[3], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.65 }, "-=0.42")
+      .fromTo(items[4], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.75 }, "-=0.42");
+
+    // Ryd efter (valgfrit)
+    tl.set(items, { clearProps: "transform" });
+  });
+
+  return () => ctx.revert();
+}, []);
 
   return (
     <>
