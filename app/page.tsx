@@ -20,26 +20,19 @@ export default function Home() {
     if (reduceMotion) return;
 
     const ctx = gsap.context(() => {
-      const items = [
-        logoRef.current,
-        badgeRef.current,
-        titleRef.current,
-        ctaRef.current,
-        footerRef.current,
-      ];
+      // Smooth timeline (ikke “trinvis” hårdt)
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      gsap.fromTo(
-        items,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.0,
-          stagger: 0.15,
-          ease: "power3.out",
-          clearProps: "transform",
-        }
-      );
+      tl.fromTo(logoRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6 })
+        .fromTo(badgeRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.35")
+        .fromTo(titleRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.7 }, "-=0.35")
+        .fromTo(ctaRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.65 }, "-=0.35")
+        .fromTo(footerRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.35");
+
+      // Ryd transform bagefter
+      tl.set([logoRef.current, badgeRef.current, titleRef.current, ctaRef.current, footerRef.current], {
+        clearProps: "transform",
+      });
     });
 
     return () => ctx.revert();
@@ -69,26 +62,26 @@ export default function Home() {
           <h1
             ref={titleRef}
             className="text-brand font-[350] tracking-tight leading-[110%]
-                      text-[36px] sm:text-[44px] lg:text-[70px]
-                      max-w-[18ch] sm:max-w-[22ch] lg:max-w-none
-                      break-words"
+                     text-[36px] sm:text-[44px] lg:text-[70px]
+                     max-w-[18ch] sm:max-w-[22ch] lg:max-w-none
+                     break-words"
           >
             Vi er i gang med at lade op
           </h1>
 
-          {/* CTA boks */}
+          {/* CTA (matcher badge-stil + premium feel) */}
           <button
             ref={ctaRef}
             onClick={() => setOpen(true)}
             className="mt-7 lg:mt-10 w-full max-w-[520px]
-                       rounded-2xl border border-brand-20 bg-white/55 backdrop-blur-md
-                       px-6 py-4 text-center shadow-sm
-                       hover:bg-white/70 transition
+                       rounded-2xl border-[0.5px] border-brand-20
+                       bg-white/10 backdrop-blur-md
+                       px-6 py-4
+                       text-brand font-[350] text-[15px] sm:text-[16px]
+                       hover:bg-white/15 transition
                        focus:outline-none focus:ring-2 focus:ring-brand/20"
           >
-            <span className="block text-brand text-[15px] sm:text-[16px] font-[350]">
-              Signup til Lancering 2026
-            </span>
+            Signup til Lancering 2026
           </button>
         </section>
 
