@@ -92,15 +92,18 @@ export default function Home() {
           </button>
         </section>
 
-      {/* Footer */}
-      <footer ref={footerRef} className="pb-12 lg:pb-16 text-center">
-        <p className="text-brand font-[350] leading-[125%]
-                      text-[14px] sm:text-[16px] lg:text-[18px] max-w-[38ch] lg:max-w-none">
-          Danmarks nye ladeløsning til dig på farten
-          <br />
-          eller hjemme. Lad op i ly. Kør grønt
-        </p>
-      </footer>
-    </main>
+        {/* Footer */}
+        <footer ref={footerRef} className="pb-12 lg:pb-16 text-center">
+          <p className="text-brand font-[350] leading-[125%]
+                        text-[14px] sm:text-[16px] lg:text-[18px] max-w-[38ch] lg:max-w-none">
+            Danmarks nye ladeløsning til dig på farten
+            <br />
+            eller hjemme. Lad op i ly. Kør grønt
+          </p>
+        </footer>
+      </main>
+
+      <SignupModal open={open} onClose={() => setOpen(false)} />
+    </>
   );
 }
