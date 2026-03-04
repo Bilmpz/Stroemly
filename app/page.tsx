@@ -26,7 +26,7 @@ export default function Home() {
       tl.fromTo(logoRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6 })
         .fromTo(badgeRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.35")
         .fromTo(titleRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.7 }, "-=0.35")
-        .fromTo(ctaRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.80 }, "-=0.25")
+        .fromTo(ctaRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.80 }, "-=0.1")
         .fromTo(footerRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 1.2 }, "-=0.35");
 
       // Ryd transform bagefter
