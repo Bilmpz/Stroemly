@@ -76,10 +76,10 @@ useEffect(() => {
         </h1>
         <div
           ref={badgeRef}
-          className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-1 lg:py-[4px] mb-6 lg:mb-8"
-        >
-          <span className="text-brand text-[13px] lg:text-[14px] font-[350]">
-            TEST
+          className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-1 lg:py-[4px] mb-6 lg:mb-8">
+            <br></br>
+          <span className="text-brand text-[13px] lg:text-[14px] font-[350] cursor-pointer">
+            Skriv op til Lancering
           </span>
         </div>
       </section>
