@@ -160,14 +160,6 @@ export default function SignupModal({ open, onClose }: Props) {
             </div>
           </form>
         </div>
-
-        <div className="px-6 sm:px-8 pb-6 sm:pb-8">
-          <div className="rounded-2xl border-[0.5px] border-brand-20 bg-white/5 p-4">
-            <p className="text-brand/80 text-xs sm:text-sm font-[350] leading-relaxed">
-              Vi bruger kun din email til at informere om lanceringen.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );
