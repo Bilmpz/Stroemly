@@ -75,7 +75,7 @@ useEffect(() => {
           Vi er i gang med at lade op
         </h1>
         <div
-          ref={badgeRefF}
+          ref={badgeRef}
           className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-1 lg:py-[4px] mb-6 lg:mb-8">
             <br />
             <br />
