@@ -26,8 +26,8 @@ export default function Home() {
       tl.fromTo(logoRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6 })
         .fromTo(badgeRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.35")
         .fromTo(titleRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.7 }, "-=0.35")
-        .fromTo(ctaRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.65 }, "")
-        .fromTo(footerRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.72 }, "-=0.35");
+        .fromTo(ctaRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.80 }, "-=0.35")
+        .fromTo(footerRef.current, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.9 }, "-=0.35");
 
       // Ryd transform bagefter
       tl.set([logoRef.current, badgeRef.current, titleRef.current, ctaRef.current, footerRef.current], {
