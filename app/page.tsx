@@ -1,8 +1,6 @@
 "use client";
-
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import SignupModal from "./components/SignupModal";
 
 export default function Home() {
   const logoRef = useRef<HTMLDivElement | null>(null);
@@ -11,36 +9,44 @@ export default function Home() {
   const ctaRef = useRef<HTMLButtonElement | null>(null);
   const footerRef = useRef<HTMLElement | null>(null);
 
-  const [open, setOpen] = useState(false);
+  const hasAnimated = useRef(false); 
 
-useEffect(() => {
-  if (!logoRef.current || !badgeRef.current || !titleRef.current || !ctaRef.current || !footerRef.current) return;
+  useEffect(() => {
+    if (hasAnimated.current) return;
+    hasAnimated.current = true;
 
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduceMotion) return;
+    if (!logoRef.current || !badgeRef.current || !titleRef.current || !ctaRef.current || !footerRef.current) return;
 
-  const ctx = gsap.context(() => {
-    const items = [
-      logoRef.current,
-      badgeRef.current,
-      titleRef.current,
-      footerRef.current, 
-      ctaRef.current,   
-    ];
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) return;
 
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    const ctx = gsap.context(() => {
+      const items = [
+        logoRef.current,
+        badgeRef.current,
+        titleRef.current,
+        footerRef.current, 
+        ctaRef.current,
+      ];
 
-    tl.fromTo(items[0], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.6 })
-      .fromTo(items[1], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.42")
-      .fromTo(items[2], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.65 }, "-=0.42")
-      .fromTo(items[3], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.70 }, "-=0.42")
-      .fromTo(items[4], { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.65 }, "-=0.42");
+   
+      gsap.set(items, { autoAlpha: 0, y: 12 });
 
-    tl.set(items, { clearProps: "transform" });
-  });
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-  return () => ctx.revert();
-}, []);
+   
+      tl.to(items[0], { autoAlpha: 1, y: 0, duration: 0.6 })
+        .to(items[1], { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.42")
+        .to(items[2], { autoAlpha: 1, y: 0, duration: 0.65 }, "-=0.42")
+        .to(items[3], { autoAlpha: 1, y: 0, duration: 0.70 }, "-=0.42")
+        .to(items[4], { autoAlpha: 1, y: 0, duration: 0.65 }, "-=0.42");
+
+      tl.set(items, { clearProps: "transform" });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <main className="min-h-[90vh] lg:min-h-screen flex flex-col items-center px-6 lg:px-0 overflow-x-hidden">
