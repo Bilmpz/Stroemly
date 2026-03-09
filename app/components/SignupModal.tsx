@@ -100,7 +100,7 @@ export default function SignupModal({ open, onClose }: Props) {
               <p className="text-brand text-sm font-[350]">Lancering 2026</p>
 
               <h2 className="mt-1 text-brand text-2xl sm:text-3xl font-[350] leading-tight">
-                Signup med din email
+                Skriv dig op til lanceringen
               </h2>
 
               <p className="mt-2 text-brand/80 text-sm sm:text-base font-[350]">
@@ -108,46 +108,57 @@ export default function SignupModal({ open, onClose }: Props) {
               </p>
             </div>
 
-            <button
-              onClick={onClose}
-              className="shrink-0 rounded-full border-[0.5px] border-brand-20
-                         bg-white/5 px-4 py-2
-                         text-brand text-sm font-[350]
-                         hover:bg-white/10 transition"
-            >
-              Luk
-            </button>
+          <button
+            onClick={onClose}
+            className="shrink-0 rounded-xl
+                      border border-gray-800/60
+                      bg-transparent
+                      px-4 py-2
+                      text-white text-sm font-[350]
+                      hover:bg-white/10
+                      transition
+                      cursor-pointer"
+          >
+            Luk
+          </button>
           </div>
 
-          <form onSubmit={onSubmit} className="mt-6">
+            <form onSubmit={onSubmit} className="mt-6">
             <label className="block text-brand text-sm font-[350] mb-2">Email</label>
 
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                ref={inputRef}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                type="email"
-                placeholder="din@email.dk"
-                className="w-full rounded-2xl border-[0.5px] border-brand-20
-                           bg-white/5 backdrop-blur-md
-                           px-4 py-3 text-brand font-[350]
-                           outline-none focus:ring-2 focus:ring-brand/20
-                           placeholder:text-brand/40"
-                required
-              />
+            <div className="flex flex-col sm:flex-row items-stretch gap-3">
+          <input
+            ref={inputRef}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="din@email.dk"
+            className="w-full h-[52px]
+                      rounded-xl
+                      border border-gray-800/60
+                      bg-transparent
+                      px-5
+                      text-white font-[350]
+                      outline-none
+                      placeholder:text-white/60
+                      focus:border-gray-300"
+          />
 
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="rounded-2xl border-[0.5px] border-brand-20
-                           bg-brand/90 text-white
-                           px-6 py-3 font-[350]
-                           hover:opacity-90 transition
-                           disabled:opacity-60"
-              >
-                {status === "loading" ? "Sender..." : "Send"}
-              </button>
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="h-[52px] px-7
+                        rounded-xl
+                        border border-gray-800/60
+                        bg-transparent
+                        text-white font-[350]
+                        transition
+                        hover:bg-white/10
+                        disabled:opacity-60
+                        cursor-pointer shrink-0"
+            >
+              {status === "loading" ? "Sender..." : "Send"}
+            </button>
             </div>
 
             <div className="mt-4 min-h-[22px]">

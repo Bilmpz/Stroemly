@@ -29,7 +29,7 @@ export default function Home() {
         logoRef.current,
         badgeRef.current,
         titleRef.current,
-        footerRef.current, // ✅ footer før CTA
+        footerRef.current, 
         ctaRef.current,
       ];
 
@@ -57,12 +57,6 @@ export default function Home() {
         </header>
 
         <section className="flex-1 flex flex-col items-center justify-center text-center">
-          <div
-            ref={badgeRef}
-            className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-1 lg:py-[4px] mb-6 lg:mb-8"
-          >
-            <span className="text-brand text-[13px] lg:text-[14px] font-[350]">Lancering 2026</span>
-          </div>
 
           <h1
             ref={titleRef}
@@ -74,19 +68,23 @@ export default function Home() {
             Vi er i gang med at lade op
           </h1>
 
-          <button
-            ref={ctaRef}
-            onClick={() => setOpen(true)}
-            className="mt-7 lg:mt-10 w-full max-w-[520px]
-                       rounded-2xl border-[0.5px] border-brand-20
-                       bg-white/10 backdrop-blur-md
-                       px-6 py-4
-                       text-brand font-[350] text-[15px] sm:text-[16px]
-                       hover:bg-white/15 transition
-                       focus:outline-none focus:ring-2 focus:ring-brand/20"
-          >
-            Signup til Lancering 2026
-          </button>
+<button
+  ref={ctaRef}
+  onClick={() => setOpen(true)}
+  className="cursor-pointer mt-7 lg:mt-10 inline-flex items-center justify-center gap-3
+             h-[48px] px-7
+             rounded-full
+             bg-[#4E4743]
+             text-[#E6E6E6]
+             text-[15px] sm:text-[16px] font-[400]
+             tracking-[0.01em]
+             transition-all duration-200
+             hover:opacity-90 hover:scale-[1.02]
+             active:scale-[0.98]"
+>
+  <span>Få besked når vi lancerer</span>
+  <span className="text-[17px] leading-none">→</span>
+</button>
         </section>
 
         <footer ref={footerRef} className="pb-12 lg:pb-16 text-center">
