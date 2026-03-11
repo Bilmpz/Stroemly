@@ -166,10 +166,10 @@ export default function SignupModal({ open, onClose }: Props) {
 
             <div className="mt-4 min-h-[22px]">
               {status === "success" && (
-                <p className="text-brand text-sm font-[350]">Tak! Du er skrevet op ✅</p>
+                <p className="text-white text-sm font-[350]">Tak! Du er skrevet op</p>
               )}
               {status === "error" && (
-                <p className="text-brand text-sm font-[350]">{errorMsg}</p>
+                <p className="text-white text-sm font-[350]">{errorMsg}</p>
               )}
             </div>
           </form>
