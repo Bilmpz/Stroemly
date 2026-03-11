@@ -93,7 +93,7 @@ tl.to(logo, {
         <section className="flex-1 flex flex-col items-center justify-center text-center">
           <div
             ref={badgeRef}
-            className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-1 lg:py-[4px] mb-6 lg:mb-8"
+            className="inline-flex items-center rounded-full border-[0px]  px-4 py-1 lg:py-[4px] mb-6 lg:mb-8"
           >
             <span className="text-brand text-[13px] lg:text-[14px] font-[350]">
               Lancering 2026
@@ -117,12 +117,12 @@ tl.to(logo, {
              bg-[#4E4743] text-[#E6E6E6]
              text-[15px] sm:text-[16px] font-[400]
              tracking-[0.01em]
-             transition-opacity duration-200
+             transition-all duration-300 ease-out
              hover:opacity-90
-             active:scale-[0.98]
              hover:bg-transparent
              hover:border-[#4E4743]
              hover:text-[#4E4743]
+             active:scale-[0.98]
              border border-transparent"
 >
             <span>Få besked når vi lancerer</span>
