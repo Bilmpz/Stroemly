@@ -111,7 +111,7 @@ export default function SignupModal({ open, onClose }: Props) {
           <button
             onClick={onClose}
             className="shrink-0 rounded-xl
-                      border border-gray-800/60
+                      border border-white/60
                       bg-transparent
                       px-4 py-2
                       text-white text-sm font-[350]
@@ -135,7 +135,7 @@ export default function SignupModal({ open, onClose }: Props) {
               placeholder="din@email.dk"
               className="w-full h-[52px]
                         rounded-xl
-                        border border-gray-800/60
+                        border border-white/60
                         bg-transparent
                         px-5
                         text-white font-[350]
@@ -144,7 +144,7 @@ export default function SignupModal({ open, onClose }: Props) {
                         focus:outline-none
                         focus:ring-0
                         focus:shadow-none
-                        focus:border-gray-800/60"
+                        focus:border-white/60"
             />
 
             <button
@@ -152,7 +152,7 @@ export default function SignupModal({ open, onClose }: Props) {
               disabled={status === "loading"}
               className="h-[52px] px-7
                         rounded-xl
-                        border border-gray-800/60
+                        border border-white/60
                         bg-transparent
                         text-white font-[350]
                         transition
