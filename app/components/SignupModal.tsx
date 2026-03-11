@@ -36,8 +36,8 @@ export default function SignupModal({ open, onClose }: Props) {
       gsap.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.65, ease: "power3.out" });
       gsap.fromTo(
         panelRef.current,
-        { opacity: 0, y: 16, scale: 0.985 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.65, ease: "power3.out" }
+        { opacity: 0 },
+        { opacity: 1, duration: 0.4, ease: "power2.out" }
       );
     }
 
@@ -78,8 +78,10 @@ export default function SignupModal({ open, onClose }: Props) {
   }
 
   return (
-    <div ref={overlayRef} className="fixed inset-0 z-50 flex items-center justify-center px-6">
-      {/* overlay */}
+    <div
+  ref={overlayRef}
+  className="fixed inset-0 z-50 flex items-center justify-center px-6 backdrop-blur-[6px]"
+>
       <button
         onClick={onClose}
         aria-label="Luk"
@@ -91,7 +93,7 @@ export default function SignupModal({ open, onClose }: Props) {
         ref={panelRef}
         className="relative w-full max-w-[560px]
                    rounded-3xl border-[0.5px] border-brand-20
-                   bg-white/10 backdrop-blur-xl
+                  bg-black/35
                    shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
       >
         <div className="p-6 sm:p-8">
