@@ -91,10 +91,10 @@ tl.to(logo, {
         </header>
 
         <section className="flex-1 flex flex-col items-center justify-center text-center">
-          <div
-            ref={badgeRef}
-            className="inline-flex items-center rounded-full border-[0px]  px-4 py-1 lg:py-[4px] mb-6 lg:mb-8"
-          >
+        <div
+          ref={badgeRef}
+        className="inline-flex items-center rounded-full px-4 py-1 lg:py-[4px] mt-8 mb-6 lg:mb-4"
+        >
             <span className="text-brand text-[13px] lg:text-[14px] font-[350]">
               Lancering 2026
             </span>
