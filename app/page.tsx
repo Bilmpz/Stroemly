@@ -58,7 +58,7 @@ tl.to(logo, {
     autoAlpha: 1,
     y: 0,
     duration: 0.9,
-  }, "-=1.92")
+  }, "-=1.40")
   .to(footer, {
     autoAlpha: 1,
     y: 0,
