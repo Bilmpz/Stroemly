@@ -35,7 +35,7 @@ const ctx = gsap.context(() => {
 
   gsap.set(cta, {
     autoAlpha: 0,
-    y: 18, 
+    y: 28, 
   });
 
   const tl = gsap.timeline({
@@ -57,13 +57,13 @@ tl.to(logo, {
   .to(cta, {
     autoAlpha: 1,
     y: 0,
-    duration: 0.95,
-  }, "-=0.88")
+    duration: 0.9,
+  }, "-=1.92")
   .to(footer, {
     autoAlpha: 1,
     y: 0,
-    duration: 1.1,
-  }, "+=0.05");
+    duration: 1.25,
+  }, "-=0.9");
 
 }, root);
 
