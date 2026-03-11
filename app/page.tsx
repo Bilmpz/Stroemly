@@ -8,6 +8,7 @@ export default function Home() {
   const rootRef = useRef<HTMLElement | null>(null);
   const logoRef = useRef<HTMLElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const badgeRef = useRef<HTMLDivElement | null>(null);
   const ctaRef = useRef<HTMLButtonElement | null>(null);
   const footerRef = useRef<HTMLElement | null>(null);
 
@@ -23,15 +24,16 @@ export default function Home() {
     const title = titleRef.current;
     const cta = ctaRef.current;
     const footer = footerRef.current;
+    const badge = badgeRef.current;
 
-    if (!root || !logo || !title || !cta || !footer) return;
+    if (!root || !logo || !title || !cta || !footer || !badge) return;
 
-const ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
 
-  gsap.set([logo, title, footer], {
-    autoAlpha: 0,
-    y: 28,
-  });
+    gsap.set([logo, badge, title, footer], {
+      autoAlpha: 0,
+      y: 28,
+    });
 
   gsap.set(cta, {
     autoAlpha: 0,
@@ -39,9 +41,7 @@ const ctx = gsap.context(() => {
   });
 
   const tl = gsap.timeline({
-  defaults: {
-    ease: "power2.out",
-  },
+  defaults: { ease: "power2.out" },
 });
 
 tl.to(logo, {
@@ -49,21 +49,26 @@ tl.to(logo, {
   y: 0,
   duration: 1.05,
 })
-  .to(title, {
-    autoAlpha: 1,
-    y: 0,
-    duration: 1.1,
-  }, "-=0.82")
-  .to(cta, {
-    autoAlpha: 1,
-    y: 0,
-    duration: 0.9,
-  }, "-=1.40")
-  .to(footer, {
-    autoAlpha: 1,
-    y: 0,
-    duration: 1.25,
-  }, "-=0.9");
+.to(badge, {
+  autoAlpha: 1,
+  y: 0,
+  duration: 0.9,
+}, "-=0.75")
+.to(title, {
+  autoAlpha: 1,
+  y: 0,
+  duration: 1.1,
+}, "-=0.7")
+.to(cta, {
+  autoAlpha: 1,
+  y: 0,
+  duration: 0.9,
+}, "-=0.95")
+.to(footer, {
+  autoAlpha: 1,
+  y: 0,
+  duration: 1.25,
+}, "-=0.9");
 
 }, root);
 
@@ -86,6 +91,14 @@ tl.to(logo, {
         </header>
 
         <section className="flex-1 flex flex-col items-center justify-center text-center">
+          <div
+            ref={badgeRef}
+            className="inline-flex items-center rounded-full border-[0.5px] border-brand-20 px-4 py-1 lg:py-[4px] mb-6 lg:mb-8"
+          >
+            <span className="text-brand text-[13px] lg:text-[14px] font-[350]">
+              Lancering 2026
+            </span>
+          </div>
           <h1
             ref={titleRef}
             className="text-brand font-[350] tracking-tight leading-[110%]
@@ -96,18 +109,22 @@ tl.to(logo, {
             Vi er i gang med at lade op
           </h1>
 
-          <button
-            ref={ctaRef}
-            onClick={() => setOpen(true)}
-            className="cursor-pointer mt-7 lg:mt-10 inline-flex items-center justify-center gap-3
-                       h-[48px] px-7 rounded-full
-                       bg-[#4E4743] text-[#E6E6E6]
-                       text-[15px] sm:text-[16px] font-[400]
-                       tracking-[0.01em]
-                       transition-all duration-200
-                       hover:opacity-90 hover:scale-[1.02]
-                       active:scale-[0.98]"
-          >
+<button
+  ref={ctaRef}
+  onClick={() => setOpen(true)}
+  className="cursor-pointer mt-7 lg:mt-10 inline-flex items-center justify-center gap-3
+             h-[48px] px-7 rounded-full
+             bg-[#4E4743] text-[#E6E6E6]
+             text-[15px] sm:text-[16px] font-[400]
+             tracking-[0.01em]
+             transition-opacity duration-200
+             hover:opacity-90
+             active:scale-[0.98]
+             hover:bg-transparent
+             hover:border-[#4E4743]
+             hover:text-[#4E4743]
+             border border-transparent"
+>
             <span>Få besked når vi lancerer</span>
             <span className="text-[17px] leading-none">→</span>
           </button>
@@ -121,7 +138,7 @@ tl.to(logo, {
           >
             Danmarks nye ladeløsning til dig på farten
             <br />
-            eller hjemme. Lad op i ly. Kør grønt
+            eller hjemme. Lad op i ly. Kør grønt.
           </p>
         </footer>
       </main>

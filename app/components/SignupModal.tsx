@@ -97,13 +97,13 @@ export default function SignupModal({ open, onClose }: Props) {
         <div className="p-6 sm:p-8">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="text-brand text-sm font-[350]">Lancering 2026</p>
 
-              <h2 className="mt-1 text-brand text-2xl sm:text-3xl font-[350] leading-tight">
+
+              <h2 className="mt-1 text-white/90 text-2xl sm:text-3xl font-[350] leading-tight">
                 Skriv dig op til lanceringen
               </h2>
 
-              <p className="mt-2 text-brand/80 text-sm sm:text-base font-[350]">
+              <p className="mt-2 text-white/90 text-sm sm:text-base font-[350]">
                 Så får du besked, når Strømly går live.
               </p>
             </div>
@@ -124,7 +124,7 @@ export default function SignupModal({ open, onClose }: Props) {
           </div>
 
             <form onSubmit={onSubmit} className="mt-6">
-            <label className="block text-brand text-sm font-[350] mb-2">Email</label>
+            <label className="block text-white text-sm font-[350] mb-2">Email</label>
 
             <div className="flex flex-col sm:flex-row items-stretch gap-3">
             <input
