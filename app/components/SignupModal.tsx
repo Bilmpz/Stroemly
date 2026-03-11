@@ -127,22 +127,25 @@ export default function SignupModal({ open, onClose }: Props) {
             <label className="block text-brand text-sm font-[350] mb-2">Email</label>
 
             <div className="flex flex-col sm:flex-row items-stretch gap-3">
-          <input
-            ref={inputRef}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="din@email.dk"
-            className="w-full h-[52px]
-                      rounded-xl
-                      border border-gray-800/60
-                      bg-transparent
-                      px-5
-                      text-white font-[350]
-                      outline-none
-                      placeholder:text-white/60
-                      focus:border-gray-300"
-          />
+            <input
+              ref={inputRef}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="din@email.dk"
+              className="w-full h-[52px]
+                        rounded-xl
+                        border border-gray-800/60
+                        bg-transparent
+                        px-5
+                        text-white font-[350]
+                        placeholder:text-white/100
+                        outline-none
+                        focus:outline-none
+                        focus:ring-0
+                        focus:shadow-none
+                        focus:border-gray-800/60"
+            />
 
             <button
               type="submit"
