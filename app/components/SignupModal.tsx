@@ -36,8 +36,8 @@ export default function SignupModal({ open, onClose }: Props) {
       gsap.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.65, ease: "power3.out" });
       gsap.fromTo(
         panelRef.current,
-        { opacity: 0, y: 16, scale: 0.985 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.65, ease: "power3.out" }
+        { opacity: 0 },
+        { opacity: 1, duration: 0.4, ease: "power2.out" }
       );
     }
 
@@ -78,8 +78,10 @@ export default function SignupModal({ open, onClose }: Props) {
   }
 
   return (
-    <div ref={overlayRef} className="fixed inset-0 z-50 flex items-center justify-center px-6">
-      {/* overlay */}
+    <div
+  ref={overlayRef}
+  className="fixed inset-0 z-50 flex items-center justify-center px-6 backdrop-blur-[6px]"
+>
       <button
         onClick={onClose}
         aria-label="Luk"
@@ -91,19 +93,19 @@ export default function SignupModal({ open, onClose }: Props) {
         ref={panelRef}
         className="relative w-full max-w-[560px]
                    rounded-3xl border-[0.5px] border-brand-20
-                   bg-white/10 backdrop-blur-xl
+                  bg-black/35
                    shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
       >
         <div className="p-6 sm:p-8">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="text-brand text-sm font-[350]">Lancering 2026</p>
 
-              <h2 className="mt-1 text-brand text-2xl sm:text-3xl font-[350] leading-tight">
+
+              <h2 className="mt-1 text-white/90 text-2xl sm:text-3xl font-[350] leading-tight">
                 Skriv dig op til lanceringen
               </h2>
 
-              <p className="mt-2 text-brand/80 text-sm sm:text-base font-[350]">
+              <p className="mt-2 text-white/90 text-sm sm:text-base font-[350]">
                 Så får du besked, når Strømly går live.
               </p>
             </div>
@@ -111,7 +113,7 @@ export default function SignupModal({ open, onClose }: Props) {
           <button
             onClick={onClose}
             className="shrink-0 rounded-xl
-                      border border-gray-800/60
+                      border border-white/60
                       bg-transparent
                       px-4 py-2
                       text-white text-sm font-[350]
@@ -124,32 +126,35 @@ export default function SignupModal({ open, onClose }: Props) {
           </div>
 
             <form onSubmit={onSubmit} className="mt-6">
-            <label className="block text-brand text-sm font-[350] mb-2">Email</label>
+            <label className="block text-white text-sm font-[350] mb-2">Email</label>
 
             <div className="flex flex-col sm:flex-row items-stretch gap-3">
-          <input
-            ref={inputRef}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="din@email.dk"
-            className="w-full h-[52px]
-                      rounded-xl
-                      border border-gray-800/60
-                      bg-transparent
-                      px-5
-                      text-white font-[350]
-                      outline-none
-                      placeholder:text-white/60
-                      focus:border-gray-300"
-          />
+            <input
+              ref={inputRef}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="din@email.dk"
+              className="w-full h-[52px]
+                        rounded-xl
+                        border border-white/60
+                        bg-transparent
+                        px-5
+                        text-white font-[350]
+                        placeholder:text-white/100
+                        outline-none
+                        focus:outline-none
+                        focus:ring-0
+                        focus:shadow-none
+                        focus:border-white/60"
+            />
 
             <button
               type="submit"
               disabled={status === "loading"}
               className="h-[52px] px-7
                         rounded-xl
-                        border border-gray-800/60
+                        border border-white/60
                         bg-transparent
                         text-white font-[350]
                         transition
@@ -163,10 +168,10 @@ export default function SignupModal({ open, onClose }: Props) {
 
             <div className="mt-4 min-h-[22px]">
               {status === "success" && (
-                <p className="text-brand text-sm font-[350]">Tak! Du er skrevet op ✅</p>
+                <p className="text-white text-sm font-[350]">Tak! Du er skrevet op</p>
               )}
               {status === "error" && (
-                <p className="text-brand text-sm font-[350]">{errorMsg}</p>
+                <p className="text-white text-sm font-[350]">{errorMsg}</p>
               )}
             </div>
           </form>
